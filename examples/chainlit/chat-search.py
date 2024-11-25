@@ -127,7 +127,7 @@ async def on_chat_start():
     )
 
     await make_llm_settings_widgets()
-    await setup_agent_task(MetaphorSearchTool)
+    await setup_agent_task(ExaSearchTool)
 
 
 @cl.on_message

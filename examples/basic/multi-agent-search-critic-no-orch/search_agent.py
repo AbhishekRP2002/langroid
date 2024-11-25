@@ -144,7 +144,7 @@ def make_search_task(model: str):
         timeout=45,
     )
 
-    search_tool_handler_method = MetaphorSearchTool.default_value("request")
+    search_tool_handler_method = ExaSearchTool.default_value("request")
 
     search_agent_config = lr.ChatAgentConfig(
         llm=llm_config,
