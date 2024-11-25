@@ -7,8 +7,8 @@ chat-search.py, which uses ChainlitTaskCallbacks.
 - User asks a question
 - LLM either responds directly or generates a Metaphor web search Tool/function-call
     - if Tool used:
-         - Agent handler recognizes this tool and returns search results
-         - LLM sees search results and composes a response.
+            - Agent handler recognizes this tool and returns search results
+            - LLM sees search results and composes a response.
 - user asks another question
 
 
@@ -20,7 +20,7 @@ chainlit run examples/chainlit/chat-search-no-callback.py
 
 import chainlit as cl
 import langroid as lr
-from langroid.agent.tools.metaphor_search_tool import MetaphorSearchTool
+from langroid.agent.tools.exa_search_tool import MetaphorSearchTool
 
 
 @cl.step(name="LLM Response")

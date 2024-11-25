@@ -62,7 +62,7 @@ def main(
         "ddg",
         "--provider",
         "-p",
-        help="search provider name (google, metaphor, ddg)",
+        help="search provider name (google, exa (previously metaphor), ddg)",
     ),
     nocache: bool = typer.Option(False, "--nocache", "-nc", help="don't use cache"),
 ) -> None:
@@ -107,10 +107,11 @@ def main(
     match provider:
         case "google":
             search_tool_class = GoogleSearchTool
-        case "metaphor":
-            from langroid.agent.tools.metaphor_search_tool import MetaphorSearchTool
+        # Ensuring backwards compatibility, TODO: clean this up later
+        case "metaphor" | "exa":
+            from langroid.agent.tools.exa_search_tool import ExaSearchTool
 
-            search_tool_class = MetaphorSearchTool
+            search_tool_class = ExaSearchTool
         case "ddg":
             search_tool_class = DuckduckgoSearchTool
         case _:
